@@ -14,7 +14,8 @@
         <a class="text-blue-500" href="/">Back to Home</a>
         <h1 class="text-3xl mb-3 mt-10 tracking-tighter">All Users</h1>
         <div class="users flex gap-3 flex-wrap">
-            <% users.forEach(function(user){ %>
+            <% if (users.length > 0){ %>
+                <% users.forEach(function(user){ %>
                 <div class="user w-72 p-4 bg-zinc-800 rounded-lg">
                     <div class="w-full h-52 rounded-lg bg-red-500 overflow-hidden">
                         <img class="w-full h-full object-cover" src="<%= user.image %>" alt="">
@@ -31,6 +32,9 @@
                     </div>
                 </div>
                 <% }) %>
+            <% } else { %>
+                <h2 class="text-zinc-500">No Users Yet</h2>
+            <% } %>
         </div>
     </div>
 </body>
